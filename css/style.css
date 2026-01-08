@@ -2804,8 +2804,15 @@ Paddingt100
     max-width: 554px;
 }
 
-maxw1000{
+.maxw1000{
     max-width: 1000px;
+}
+
+.maxw1200{
+    max-width: 1200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -3075,3 +3082,24 @@ h3.top {
     max-width: 800px;
     margin: auto;
 }
+
+.hide-element {
+    display: none;
+}
+
+.img-responsive-limit {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+
+}
+
+.fixed-height-img {
+    height: 800px;       
+    width: auto;        
+    object-fit: contain;   
+    display: block;  
+    margin: 0 auto;      
+}
+
