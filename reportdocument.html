@@ -446,7 +446,7 @@ Implication: The system must be the "Single Source of Truth" ensuring clear stat
 				    <div class="row contentitem">
                                     
                                     <div class="col-md-6" class="textcenter ">
-                                    <img class="maxw554" src="img/ASM5_1.png" alt="A diagram showing a part of Object map">
+                                    <img class="maxw1000" src="img/ASMTaskWorkflow.png" alt="A diagram showing a part of Object map">
                                   
                            </div>
                            
@@ -505,7 +505,7 @@ The core dilemma was granular vs. batch approval. Should users approve individua
                            </div>
                            
                            <div class="col-md-6 padding50">
-                                <img class="" src="img/ASM3_1000.png" alt="A diagram showing a selected user flow">
+                                <img class="" src="img/ASMUserflow.png" alt="A diagram showing a selected user flow">
                            </div>
                            
                            <div class="col-md-8 padding50">
@@ -517,7 +517,6 @@ Research revealed that users needed to read the report, tag data attributes, and
                                <br>
                                <ul class="projectdescriptionbody">
 <li>I designed a unified 3-panel interface (Data Input | Document Viewer | Communication) that keeps all necessary context on a single screen. This way, users do not rely on short-term memory to carry information from one page to another. </li>
-<li>To avoid overwhelming users with raw logs, I prioritized their mental model: recent activity first, with expandable details.</li>
                            </ul>
                            </div>
                            
@@ -534,25 +533,67 @@ Research revealed that users needed to read the report, tag data attributes, and
                     
                     
                       <!-- Start Row -->
-                    <div class="hide-element section-content bggrey">
+                    <div class="section-content bgblack">
                        <div class="row contentitemtop ">
                                                       
                            <div>
                            <div class="col-md-12 center">
-                               <p class="title"> 4. Final design</p>
+                               <p class="title white"> 5. Key interactions</p>
                            </div>
                            
                            <div class="col-md-4">
-                              <p class="projectdescriptionbody">I used a card-based layout. The main object and its attachment (Schedule) are placed in the left column. To make the table easier to read, the right pane can be collapsed.
-                                  <br> <br>
+                                <p class="title grey">Enforcing sequence of approvals</p>
+                              <p class="projectdescriptionbody grey">Business logic dictated that sub-objects must be approved before the main report.</p> 
+                                  <br>
+                                  <ul class="projectdescriptionbody grey">
+<li>
+                                      I implemented a contextual validation model. Users retain full visibility of the report, but final actions are blocked until prerequisites are met, guided by clear status banners. This keeps the user in context while enforcing compliance.</li>
+<li>I considered a Wizard pattern but rejected it. Wizards isolate users from context, preventing them from cross-referencing data.</li>
+                                      </ul>
+                               <br>
+                                  
                                 
-Tasks to be performed are located at the top left, so they are always visible. Communication-related features are placed in tabs.</p> 
                                                            
                            </div>
                            
                            
-                           <div class="col-md-8 maxw1000">
-                              <img src="img/Rec1.gif" alt="Animated mockup"> 
+                           <div class="col-md-8 maxw554">
+                              <img src="img/ASMDataElements.png" alt="Animated mockup"> 
+                                                           
+                           </div>
+                               
+                           </div>
+                        
+                           
+                           
+                        </div>
+                        
+                        
+                          <div class="row contentitemtop ">
+                                                      
+                           <div>
+                           <div class="col-md-12 center">
+                               <p class="title grey"> Mitigating human error in communication</p>
+                           </div>
+                           
+                           <div class="col-md-4">
+                               
+                              <p class="projectdescriptionbody grey">In a high-stress environment, the primary risk was human error. Users could mistake an internal comment space for an external channel, potentially exposing sensitive team discussions to unauthorized people.</p> 
+                                  <br>
+                                  <ul class="projectdescriptionbody grey">
+<li>
+                                      I enforced visual & functional  separation. Internal and External threads reside in  separate tabs with distinct visual styling, making the current "mode" unmistakable at a glance.</li>
+<li>To further prevent slip-ups, I designed the External flow to be deliberately slower. While internal comments post instantly, external communication triggers a dedicated modal with a secondary confirmation step. This forces the user to pause and verify their intent before publishing.</li>
+                                      </ul>
+                               <br>
+                                  
+                                
+                                                           
+                           </div>
+                           
+                           
+                           <div class="col-md-8 maxw740">
+                              <img src="img/ASMComments.png" alt=" mockup"> 
                                                            
                            </div>
                                
@@ -563,17 +604,37 @@ Tasks to be performed are located at the top left, so they are always visible. C
                         </div>
                            
                         
-                        <div class="row contentitem ">
-                             <div class="col-md-4">
-                              <p class="projectdescriptionbody">Forms are placed inline so that the user filling out a form can see data in other parts of the interface.</p> 
+             <div class="row contentitemtop ">
+                                                      
+                           <div>
+                           <div class="col-md-12 center">
+                               <p class="title grey"> Connecting data with context</p>
+                           </div>
+                           
+                           <div class="col-md-4 row-last-child">
+                               
+                              <p class="projectdescriptionbody grey">Users constantly jump between data forms and the source PDF to verify facts. Manually searching for the right paragraph every time was slow and frustrating.</p> 
+                                  <br>
+                                  <ul class="projectdescriptionbody grey">
+<li>
+                                    I built a direct bridge between the two. Users can now instantly jump from a specific data field to its exact location in the PDF (and vice versa).</li>
+<li>I decided against auto-scrolling. Having the document jump around every time a user touched a field felt disorienting and intrusive. Instead, I chose intentional navigation—the view only moves when the user explicitly asks for it. This keeps the user in full control of their workspace and prevents accidental misclicks.</li>
+                                      </ul>
+                               <br>
+                                  
+                                
                                                            
                            </div>
                            
                            
-                           <div class="col-md-8 maxw1000">
-                              <img src="img/Rec2.gif" alt="Animated mockup"> 
+                           <div class="col-md-8 maxw740 container-img row-last-child">
+                              <img src="img/ASMShowIn.png" class="" alt=" mockup"> 
                                                            
                            </div>
+                               
+                           </div>
+                        
+                           
                            
                         </div>
                         
@@ -647,7 +708,7 @@ The 3-pane responsive layout was technically demanding, requiring precise alignm
                                
                                <br>
                                
-                               <p class="title white">Key learnings</p>
+                               <p class="title white">8. Key learnings</p>
                                         <ul class="grey projectdescriptionbody">
                                         <li><b>Critical process analysis:</b> I learned that effective design requires challenging the client's mental model, not just digitizing their existing workflow. By questioning why a process works a certain way, I was able to consolidate and simplify the logic rather than replicating offline chaos.</li>
                                         <li><b>Embracing complexity:</b> In complex domains, "minimalist" design isn't always superior. I learned that visible complexity can actually support critical tasks rather than distract from them. Having full context immediately available is the key to speed and accuracy.
